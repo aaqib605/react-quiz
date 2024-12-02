@@ -49,11 +49,6 @@ export interface Action {
   payload?: Question[] | number | null;
 }
 
-// export interface Reducer {
-//   state: InitialState;
-//   action: Action;
-// }
-
 function reducer(state: InitialState, action: Action): InitialState {
   switch (action.type) {
     case "dataReceived":
@@ -97,14 +92,6 @@ function reducer(state: InitialState, action: Action): InitialState {
       };
     case "restart":
       return { ...initialState, questions: state.questions, status: "ready" };
-    // return {
-    //   ...state,
-    //   points: 0,
-    //   highscore: 0,
-    //   index: 0,
-    //   answer: null,
-    //   status: "ready",
-    // };
 
     case "tick":
       return {
