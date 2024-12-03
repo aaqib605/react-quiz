@@ -2,6 +2,9 @@
 
 A React-based Quiz Web App designed to test your knowledge of React concepts across beginner, intermediate, and advanced levels. The app features a timer to challenge your speed and a high score functionality to track your best performance.
 
+<img src="./public/react-quiz-1.png">
+<img src="./public/react-quiz-2.png">
+
 **Features**
 
 - **Multiple Difficulty Levels**: Test your knowledge with questions categorized into beginner, intermediate, and advanced levels.
