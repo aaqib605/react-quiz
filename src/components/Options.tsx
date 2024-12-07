@@ -1,12 +1,9 @@
-import { Action, Question } from "../App";
+import { useQuiz } from "../contexts/QuizContext";
 
-interface Options {
-  question: Question;
-  dispatch: ({ type, payload }: Action) => void;
-  answer: number | null;
-}
+function Options() {
+  const { questions, index, dispatch, answer } = useQuiz();
 
-function Options({ question, dispatch, answer }: Options) {
+  const question = questions[index];
   const hasAnswered = answer !== null;
 
   return (

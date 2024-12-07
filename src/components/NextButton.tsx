@@ -1,13 +1,7 @@
-import { Action } from "../App";
+import { useQuiz } from "../contexts/QuizContext";
 
-interface NextButton {
-  dispatch: ({ type, payload }: Action) => void;
-  answer: number | null;
-  index: number;
-  numQuestions: number;
-}
-
-function NextButton({ dispatch, answer, index, numQuestions }: NextButton) {
+function NextButton() {
+  const { dispatch, answer, index, numQuestions } = useQuiz();
   if (answer === null) return null;
 
   if (index < numQuestions - 1)

@@ -1,18 +1,8 @@
-import { Action } from "../App";
+import { useQuiz } from "../contexts/QuizContext";
 
-interface FinishScreen {
-  points: number;
-  maxPossiblePoints: number;
-  highscore: number;
-  dispatch: ({ type, payload }: Action) => void;
-}
+function FinishScreen() {
+  const { points, maxPossiblePoints, highscore, dispatch } = useQuiz();
 
-function FinishScreen({
-  points,
-  maxPossiblePoints,
-  highscore,
-  dispatch,
-}: FinishScreen) {
   const percentage = (points / maxPossiblePoints) * 100;
 
   let emoji;

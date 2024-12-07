@@ -1,17 +1,15 @@
 import Options from "./Options";
-import { Action, Question as QuestionInterface } from "../App";
+import { useQuiz } from "../contexts/QuizContext";
 
-interface QuestionProps {
-  question: QuestionInterface;
-  dispatch: ({ type, payload }: Action) => void;
-  answer: number | null;
-}
+function Question() {
+  const { questions, index } = useQuiz();
 
-function Question({ question, dispatch, answer }: QuestionProps) {
+  const question = questions[index]["question"];
+
   return (
     <div>
-      <h4>{question.question}</h4>
-      <Options question={question} dispatch={dispatch} answer={answer} />
+      <h4>{question}</h4>
+      <Options />
     </div>
   );
 }
